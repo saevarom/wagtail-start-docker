@@ -8,8 +8,8 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     # you can use the tail -F anything command to start an empty container
-    #command: tail -F anything 
-    command: python manage.py runserver 0.0.0.0:${DOCKER_DJANGO_PORT:-8000}
+    command: tail -F anything 
+    #command: python manage.py runserver 0.0.0.0:${DOCKER_DJANGO_PORT:-8000}
     volumes:
       - .:/code
       - ~/.ssh/id_rsa:/root/.ssh/id_rsa
