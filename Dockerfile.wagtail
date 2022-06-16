@@ -3,7 +3,7 @@ ENV PYTHONUNBUFFERED 1
 RUN apt-get update || : && apt-get install -y curl python build-essential
 RUN mkdir /code
 WORKDIR /code
-COPY requirements.common.txt requirements.docker.txt /code/
+COPY requirements.docker.txt /code/
 RUN --mount=type=cache,target=/root/.cache/pip pip install --upgrade pip
 RUN --mount=type=cache,target=/root/.cache/pip pip install -r requirements.docker.txt --src /usr/local/src
 COPY . /code/
