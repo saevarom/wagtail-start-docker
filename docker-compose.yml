@@ -1,0 +1,36 @@
+version: '3'
+
+volumes:
+  node_modules:
+services:
+  web:
+    build: .
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    command: python manage.py runserver 0.0.0.0:${DOCKER_DJANGO_PORT:-8000}
+    volumes:
+      - .:/code
+      - ~/.ssh/id_rsa:/root/.ssh/id_rsa
+      - node_modules:/code/node_modules/
+    ports:
+      - "${DOCKER_DJANGO_PORT:-8000}:${DOCKER_DJANGO_PORT:-8000}"
+      - 5432
+    environment:
+      DATABASE_URL: postgres://$POSTGRES_USER:$POSTGRES_PASSWORD@${POSTGRES_HOST:-host.docker.internal}:5432/$POSTGRES_DATABASE
+  redis:
+    image: redis:alpine
+    restart: always
+    expose:
+      - 6379
+  # celery:
+  #   restart: always
+  #   build:
+  #     context: .
+  #   command: celery -A <project_name> worker -l info
+  #   volumes:
+  #     - .:/code
+  #   environment:
+  #     DATABASE_URL: postgres://$POSTGRES_USER:$POSTGRES_PASSWORD@${POSTGRES_HOST:-host.docker.internal}:5432/$POSTGRES_DATABASE
+  #   depends_on:
+  #     - redis
+  #     - web
