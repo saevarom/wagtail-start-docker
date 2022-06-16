@@ -21,11 +21,13 @@ services:
       - 5432
     environment:
       DATABASE_URL: postgres://$POSTGRES_USER:$POSTGRES_PASSWORD@${POSTGRES_HOST:-host.docker.internal}:5432/$POSTGRES_DATABASE
-  redis:
-    image: redis:alpine
-    restart: always
-    expose:
-      - 6379
+  # Optional redis container
+  # redis:
+  #   image: redis:alpine
+  #   restart: always
+  #   expose:
+  #     - 6379
+  # Optional celery container
   # celery:
   #   restart: always
   #   build:
