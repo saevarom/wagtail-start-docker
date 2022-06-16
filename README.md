@@ -24,6 +24,6 @@ To open a shell, run `docker-compose exec web bash`.
 
 6. In your container shell, run migrations: `python manage.py migrate`.
 
-7. Visit your app in your [Docker](http://localhost:8000/)
+7. Visit your app in your browser: [http://localhost:8000/](http://localhost:8000/)
 
 8. Start developing your new Wagtail site on Docker!
