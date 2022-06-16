@@ -31,6 +31,8 @@ To open a shell, run `docker-compose exec web bash`.
 +    command: python manage.py runserver 0.0.0.0:${DOCKER_DJANGO_PORT:-8000}
 ```
 
-7. Visit your app in your browser: [http://localhost:8000/](http://localhost:8000/)
+8. Start your container again `docker-compose up`
 
-8. Start developing your new Wagtail site on Docker!
+9. Visit your app in your browser: [http://localhost:8000/](http://localhost:8000/)
+
+10. Start developing your new Wagtail site on Docker!
