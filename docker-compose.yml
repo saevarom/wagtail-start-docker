@@ -4,7 +4,9 @@ volumes:
   node_modules:
 services:
   web:
-    build: .
+    build: 
+      context: .
+      dockerfile: Dockerfile.wagtail
     extra_hosts:
       - "host.docker.internal:host-gateway"
     # you can use the tail -F anything command to start an empty container
