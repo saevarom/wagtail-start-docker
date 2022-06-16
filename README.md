@@ -19,3 +19,11 @@ naming your repository and change other settings if you want. See screenshot:
 4. This project is configured so that the container is built with everything necessary to build a new Wagtail site. On the first run, 
 you will have a running container with no entry point. This is so that you can open a shell in your container and start your project.
 To open a shell, run `docker-compose exec web bash`.
+
+5. In your container shell, start your wagtail project: `wagtail start mysite /code`.
+
+6. In your container shell, run migrations: `python manage.py migrate`.
+
+7. Visit your app in your [Docker](http://localhost:8000/)
+
+8. Start developing your new Wagtail site on Docker!
