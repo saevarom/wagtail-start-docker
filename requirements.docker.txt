@@ -1,2 +1,2 @@
--r requirements.common.txt
+wagtail==3.0.1
 psycopg2-binary==2.9.3
