@@ -9,7 +9,8 @@ Setup
 **Requirements:** [Docker](https://www.docker.com/) and Docker Compose (Docker Compose is included with Docker Desktop for Mac and Windows).
 
 1. On the repository [front page](https://www.github.com/saevarom/dockerize-wagtail), click the "Use this template" button and proceed with
-naming your repository and change other settings if you want.
+naming your repository and change other settings if you want. See screenshot:
+<img width="308" alt="Screenshot 2022-06-16 at 14 10 41" src="https://user-images.githubusercontent.com/143557/174067767-fef888d2-8491-4845-8e57-4fd24cfc8fb0.png">
 
 2. Clone your repository and change to the directory in your terminal
 
