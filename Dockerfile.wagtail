@@ -1,6 +1,6 @@
 FROM python:3.12-slim
 ENV PYTHONUNBUFFERED 1
-RUN apt-get update || : && apt-get install -y curl python build-essential
+RUN apt-get update || : && apt-get install -y curl build-essential
 RUN mkdir /code
 WORKDIR /code
 COPY requirements.docker.txt /code/
